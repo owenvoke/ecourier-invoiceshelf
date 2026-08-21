@@ -1,0 +1,22 @@
+{
+  "name": "@ecourier/invoiceshelf",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/utecca/ecourier-invoiceshelf.git"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "axios": "^1.13.6",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.0.5",
+    "vue": "^3.5.0"
+  }
+}

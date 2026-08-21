@@ -1,0 +1,34 @@
+/*
+ * InvoiceShelf 2.x styles itself with Tailwind and this module's markup uses the
+ * same utilities, so the module compiles its own rather than relying on the host
+ * having happened to compile every class used here. `@source` limits the scan to
+ * this module's scripts, which keeps `dist/style.css` to the classes in use.
+ *
+ * Nothing is emitted into `base`: preflight is a global reset and the host has
+ * already applied its own. `theme(reference)` registers the default theme so
+ * utilities can be generated from it without re-declaring the variables — those
+ * would override any palette the host has customised. The utilities resolve the
+ * host's variables at runtime, so the module follows the host's colours.
+ *
+ * The layer order has to be declared in full, `base` included. `ModuleFacade`
+ * puts a module's stylesheet ahead of the host's, so this file is what first
+ * establishes the order for the page, and a layer the host introduces later
+ * would be appended after `utilities` — putting the host's preflight above every
+ * utility on the page, its own included.
+ */
+@layer theme, base, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme) theme(reference);
+@import 'tailwindcss/utilities.css' layer(utilities) source(none);
+
+@source '../scripts';
+
+/*
+ * `primary` is the host's palette rather than a Tailwind default, so it has to be
+ * registered before `text-primary-500` can be generated. Declared against the
+ * host's variable of the same name, the way the host declares it too, so the
+ * module picks up whatever brand colour is in effect instead of pinning one.
+ */
+@theme reference {
+  --color-primary-500: var(--color-primary-500);
+}

@@ -1,0 +1,24 @@
+parameters:
+  level: 5
+  paths:
+    - Config
+    - Database
+    - Http
+    - Jobs
+    - Listeners
+    - Models
+    - Observers
+    - Peppol
+    - Providers
+    - Routes
+    - Settings
+    - Support
+    - tests
+
+  # This module runs inside an InvoiceShelf application, so the host is not an
+  # installable dependency. Its classes are declared under stubs/ for analysis
+  # only — see stubs/app-models.php.
+  scanDirectories:
+    - stubs
+
+  reportUnmatchedIgnoredErrors: true

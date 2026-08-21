@@ -1,0 +1,18 @@
+{
+    "name": "Ecourier",
+    "alias": "ecourier",
+    "description": "Sends InvoiceShelf invoices to the Peppol network through eCourier.",
+    "keywords": [
+        "peppol",
+        "ecourier",
+        "e-invoicing",
+        "nemhandel"
+    ],
+    "priority": 0,
+    "providers": [
+        "Modules\\Ecourier\\Providers\\EcourierServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

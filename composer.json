@@ -1,0 +1,63 @@
+{
+    "name": "ecourier/invoiceshelf",
+    "description": "Sends InvoiceShelf invoices to the Peppol network through eCourier.",
+    "license": "MIT",
+    "homepage": "https://github.com/utecca/ecourier-invoiceshelf",
+    "authors": [
+        {
+            "name": "Owen Voke",
+            "email": "owen@worksome.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "ext-json": "*",
+        "ecourier/ecourier": "^1.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^13.0",
+        "laravel/pint": "^1.29",
+        "pestphp/pest": "^4.4",
+        "phpstan/phpstan": "^2.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Ecourier\\": "",
+            "App\\": "app/",
+            "InvoiceShelf\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Ecourier\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": "pint --ansi",
+        "test:lint": "pint --test --ansi",
+        "test:types": "phpstan analyse --ansi --memory-limit=-1",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "support": {
+        "issues": "https://github.com/utecca/ecourier-invoiceshelf/issues",
+        "source": "https://github.com/utecca/ecourier-invoiceshelf"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    }
+}
